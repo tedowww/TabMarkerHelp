@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TabMarker</title>
   <style>
+    /* 기본 스타일 */
     body {
       margin: 0;
       padding: 0;
@@ -13,51 +14,130 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      background-color: #f9f9f9;
+      background-color: #f1f5f9;
       color: #333;
-      text-align: center;
+      position: relative; /* 화살표 위치를 위한 상대 위치 설정 */
     }
     #content {
-      max-width: 800px;
-      padding: 20px;
+      max-width: 700px;
+      padding: 30px;
       background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      border: 1px solid #ddd;
+      animation: fadeIn 0.6s ease-out;
     }
-    h1, h3 {
-      margin: 10px 0;
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     h1 {
-      font-size: 28px;
-      color: #007bff;
+      font-size: 26px;
+      margin-bottom: 10px;
+      color: #000000; /* 검정색 제목 */
+      border-bottom: 2px solid #3b82f6;
+      display: inline-block;
+      padding-bottom: 5px;
     }
     h3 {
       font-size: 18px;
+      margin: 8px 0;
+      line-height: 1.6;
     }
-    .icon {
+    h3 .icon {
       margin-right: 8px;
+      font-size: 20px;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: 15px 0;
+    }
+
+    /* 좌측 아래 도구 강조 */
+    .tool-tip {
+      margin-top: 20px;
+      padding: 15px;
+      background: linear-gradient(90deg, #ffeb3b, #ff9800);
+      color: #ffffff;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      animation: bounce 1.5s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    .tool-tip span {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+    .tool-tip a {
+      color: #1e40af;
+      text-decoration: underline;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    .tool-tip a:hover {
+      color: #d97706;
+    }
+
+    /* 화살표 스타일 */
+    .arrow {
+      position: absolute;
+      bottom: 100px; /* 툴 위치 맞춰 조정 */
+      left: 100px; /* 화살표 시작 지점 */
+      font-size: 50px;
+      color: #ff9800;
+      animation: point 1s infinite ease-in-out;
+    }
+    @keyframes point {
+      0%, 100% {
+        transform: translateX(-10px);
+      }
+      50% {
+        transform: translateX(0);
+      }
     }
   </style>
 </head>
 <body>
+  <!-- 좌측 아래 강조 화살표 -->
+  <div class="arrow">↙️</div>
+
   <div id="content">
-    <h1>📌 TabMarker</h1>
-    <h3>📌 Mark a tab: Ctrl+[0-9] Double-Tap</h3>
-    <h3>🌏 Switch to a marked tab: Ctrl+[0-9] Single-Tap</h3>
-    <h3>🗑️ Unmark a tab: Ctrl+D</h3>
-    <h3>📋 View marked tabs: ⇧(Shift) 두 번 누르기</h3>
-    <h3>🧹 Close unmarked tabs: ↙️ Using the tool on the bottom left</h3>
-    <h3>🔗 Bookmark: ↙️ Using the tool on the bottom left</h3>
-    <h3>🔗 Open bookmark URL: Option(⌥)+[0-9] or Alt+[0-9]</h3>
+    <h1>EN</h1>
+    <hr>
+    <h3><span class="icon">📌</span>Mark a tab: <strong>Ctrl+[0-9] Double-Tap</strong></h3>
+    <h3><span class="icon">🌏</span>Switch to a marked tab: <strong>Ctrl+[0-9] Single-Tap</strong></h3>
+    <h3><span class="icon">🗑️</span>Unmark a tab: <strong>Ctrl+D</strong></h3>
+    <h3><span class="icon">📋</span>View marked tabs: <strong>⇧(Shift) 두 번 누르기</strong></h3>
+    <h3><span class="icon">🧹</span>Close unmarked tabs: <strong>Using the tool on the bottom left</strong></h3>
+    <h3><span class="icon">🔗</span>Bookmark: <strong>Using the tool on the bottom left</strong></h3>
+    <h3><span class="icon">🔗</span>Open bookmark URL: <strong>Option(⌥)+[0-9] or Alt+[0-9]</strong></h3>
     <br>
-    <h1>📌 탭 마커</h1>
-    <h3>📌 탭 마킹: Ctrl+[0-9] 두 번 누르기</h3>
-    <h3>🌏 마킹된 탭으로 이동: Ctrl+[0-9] 한 번 누르기</h3>
-    <h3>🗑️ 탭 마킹 해제: Ctrl+D</h3>
-    <h3>📋 마킹된 탭 목록: ⇧(Shift) 두 번 누르기</h3>
-    <h3>🧹 마킹되지 않은 탭 모두 닫기: ↙️ 왼쪽 아래 도구 이용</h3>
-    <h3>🔗 북마크 등록: ↙️ 왼쪽 아래 도구 이용</h3>
-    <h3>🔗 북마크된 URL 열기: Option(⌥)+[0-9] 또는 Alt+[0-9]</h3>
+    <h1>KO</h1>
+    <hr>
+    <h3><span class="icon">📌</span>탭 마킹: <strong>Ctrl+[0-9] 두 번 누르기</strong></h3>
+    <h3><span class="icon">🌏</span>마킹된 탭으로 이동: <strong>Ctrl+[0-9] 한 번 누르기</strong></h3>
+    <h3><span class="icon">🗑️</span>탭 마킹 해제: <strong>Ctrl+D</strong></h3>
+    <h3><span class="icon">📋</span>마킹된 탭 목록: <strong>⇧(Shift) 두 번 누르기</strong></h3>
+    <h3><span class="icon">🧹</span>마킹되지 않은 탭 모두 닫기: <strong>왼쪽 아래 도구 이용</strong></h3>
+    <h3><span class="icon">🔗</span>북마크 등록: <strong>왼쪽 아래 도구 이용</strong></h3>
+    <h3><span class="icon">🔗</span>북마크된 URL 열기: <strong>Option(⌥)+[0-9] 또는 Alt+[0-9]</strong></h3>
   </div>
 </body>
 </html>
