@@ -112,6 +112,21 @@
         transform: translateX(0);
       }
     }
+    /* 키보드 자판 스타일 */
+    .shortcut-key {
+      display: inline-block;
+      padding: 5px 10px;
+      margin: 2px;
+      background: linear-gradient(to bottom, #f8f9fa, #d1d5db); /* 입체감 있는 그라데이션 */
+      border: 1px solid #a1a1aa;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      font-family: "system-ui, 'Apple SD Gothic Neo', AppleGothic, sans-serif"; /* 특수 기호 대응 */
+      color: #333;
+      box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+      text-shadow: 0 1px 0 white;
+    }
   </style>
 </head>
 <body>
@@ -121,21 +136,49 @@
   <div id="content">
     <h1>EN</h1>
     <hr>
-    <h3><span class="icon">📌</span>Mark a tab: <strong>Ctrl+[0-9] Double-Tap</strong></h3>
-    <h3><span class="icon">🌏</span>Switch to a marked tab: <strong>Ctrl+[0-9] Single-Tap</strong></h3>
-    <h3><span class="icon">🗑️</span>Unmark a tab: <strong>Ctrl+D</strong></h3>
-    <h3><span class="icon">📋</span>View marked tabs: <strong>⇧(Shift) Double-Tap</strong></h3>
-    <h3><span class="icon">🔗</span>Open bookmark URL: <strong>Option(⌥)+[0-9] or Alt+[0-9]</strong></h3>
-    <h3><span class="icon">⚠️</span>Shortcuts do not work on system pages (chrome://, etc.)</h3>
+    <h3><span class="icon">📌</span>Mark a tab: 
+      <strong><span class="shortcut-key">Control(⌃)+[0-9]</span> or 
+      <span class="shortcut-key">Ctrl+[0-9]</span> Double-Tap</strong>
+    </h3>
+    <h3><span class="icon">🌏</span>Switch to a marked tab: 
+      <strong><span class="shortcut-key">Control(⌃)+[0-9]</span> or 
+      <span class="shortcut-key">Ctrl+[0-9]</span> Single-Tap</strong>
+    </h3>
+    <h3><span class="icon">🗑️</span>Unmark a tab: 
+      <strong><span class="shortcut-key">Control(⌃)+D</span> or 
+      <span class="shortcut-key">Ctrl+D</span></strong>
+    </h3>
+    <h3><span class="icon">📋</span>View marked tabs: 
+      <strong><span class="shortcut-key">Shift(⇧)</span> Double-Tap</strong>
+    </h3>
+    <h3><span class="icon">🔗</span>Open bookmark URL: 
+      <strong><span class="shortcut-key">Option(⌥)+[0-9]</span> or 
+      <span class="shortcut-key">Alt+[0-9]</span></strong>
+    </h3>
+    <h3><span class="icon">⚠️</span>Shortcuts do not work on system pages (chrome://newtab, etc.)</h3>
     <br>
     <h1>KO</h1>
     <hr>
-    <h3><span class="icon">📌</span>탭 마킹: <strong>Ctrl+[0-9] 두 번 누르기</strong></h3>
-    <h3><span class="icon">🌏</span>마킹된 탭으로 이동: <strong>Ctrl+[0-9] 한 번 누르기</strong></h3>
-    <h3><span class="icon">🗑️</span>탭 마킹 해제: <strong>Ctrl+D</strong></h3>
-    <h3><span class="icon">📋</span>마킹된 탭 목록: <strong>⇧(Shift) 두 번 누르기</strong></h3>
-    <h3><span class="icon">🔗</span>북마크된 URL 열기: <strong>Option(⌥)+[0-9] 또는 Alt+[0-9]</strong></h3>
-    <h3><span class="icon">⚠️</span>시스템 페이지에서는 단축키가 동작하지 않습니다. (chrome:// 등)</h3>
+    <h3><span class="icon">📌</span>탭 마킹: 
+      <strong><span class="shortcut-key">Control(⌃)+[0-9]</span> 또는 
+      <span class="shortcut-key">Ctrl+[0-9]</span> 두 번 누르기</strong>
+    </h3>
+    <h3><span class="icon">🌏</span>마킹된 탭으로 이동: 
+      <strong><span class="shortcut-key">Control(⌃)+[0-9]</span> 또는 
+      <span class="shortcut-key">Ctrl+[0-9]</span> 한 번 누르기</strong>
+    </h3>
+    <h3><span class="icon">🗑️</span>탭 마킹 해제: 
+      <strong><span class="shortcut-key">Control(⌃)+D</span> 또는 
+      <span class="shortcut-key">Ctrl+D</span></strong>
+    </h3>
+    <h3><span class="icon">📋</span>마킹된 탭 목록: 
+      <strong><span class="shortcut-key">Shift(⇧)</span> 두 번 누르기</strong>
+    </h3>
+    <h3><span class="icon">🔗</span>북마크된 URL 열기: 
+      <strong><span class="shortcut-key">Option(⌥)+[0-9]</span> 또는 
+      <span class="shortcut-key">Alt+[0-9]</span></strong>
+    </h3>
+    <h3><span class="icon">⚠️</span>시스템 페이지에서는 단축키가 동작하지 않습니다. (chrome://newtab 등)</h3>
 
     <!-- 피드백 섹션 -->
     <div style="margin-top: 60px; padding: 15px; background: #eaf4fc; border-radius: 12px; text-align: center; font-size: 14px; border: 1px solid #90caf9;">
